@@ -1,8 +1,6 @@
-require "pry"
-
 def reformat_languages(languages)
   new_hash = {}
-  languages.each do |style,language_hash|
+  languages.collect do |style,language_hash|
     language_hash.collect do |language, type_hash|
       if new_hash[language].is_a?(Hash)
         new_hash[language][:style].push(style)
